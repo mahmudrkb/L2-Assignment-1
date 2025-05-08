@@ -36,40 +36,49 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
   return result;
 }
 
-console.log(concatenateArrays(["a", "b"], ["c"])); 
+console.log(concatenateArrays(["a", "b"], ["c"]));
 // Output: ["a", "b", "c"]
-console.log(concatenateArrays([1, 2], [3, 4], [5])); 
+console.log(concatenateArrays([1, 2], [3, 4], [5]));
 // Output: [1, 2, 3, 4, 5]
 
-
-
 class Vehicle {
-    private Make: string;
-    private Year: number;
-  
-    constructor(Make: string, Year: number) 
-    {
-      this.Make = Make;
-      this.Year = Year;
-    }
-    getInfo(): string {
-      return `Make: ${this.Make}, Year: ${this.Year}`;
-    }
+  private Make: string;
+  private Year: number;
+
+  constructor(Make: string, Year: number) {
+    this.Make = Make;
+    this.Year = Year;
   }
-  
-  class Car extends Vehicle {
-    private Model: string;
-    constructor(Make: string, Year: number, Model: string) {
-      super(Make, Year);
-      this.Model = Model;
-    }
-    getModel(): string {
-      return `Model: ${this.Model}`;
-    }
+  getInfo(): string {
+    return `Make: ${this.Make}, Year: ${this.Year}`;
   }
-  
-  const myCar = new Car("Toyota", 2020, "Corolla");
+}
+
+class Car extends Vehicle {
+  private Model: string;
+  constructor(Make: string, Year: number, Model: string) {
+    super(Make, Year);
+    this.Model = Model;
+  }
+  getModel(): string {
+    return `Model: ${this.Model}`;
+  }
+}
+
+const myCar = new Car("Toyota", 2020, "Corolla");
 //   const myCar = new Car("Bugatti", 2024, "Chiron");
-  console.log(myCar.getInfo())   // Output: "Make: Toyota, Year: 2020"
-  console.log(myCar.getModel())  // Output: "Model: Corolla"
-  
+console.log(myCar.getInfo()); // Output: "Make: Toyota, Year: 2020"
+console.log(myCar.getModel()); // Output: "Model: Corolla"
+
+function processValue(value: string | number): number {
+  if (typeof value === "number") {
+    return value * 2;
+  } else {
+    return value.length;
+  }
+}
+
+console.log(processValue("hello"));; // Output: 5
+// console.log(processValue("hello world"));
+console.log(processValue(10)); // Output: 20
+ // Output: 20
