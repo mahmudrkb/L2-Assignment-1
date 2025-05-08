@@ -5,14 +5,9 @@ function formatString(input: string, toUpper?: boolean): string {
     return input.toLocaleUpperCase();
   }
 }
-// console.log(formatString("ami", true));
-console.log(formatString("Hello"));
-console.log(formatString("Hello", true));
-console.log(formatString("Hello", false));
 
-// Output: "HELLO"
-// Output: "HELLO"
-// Output: "hello"
+
+
 
 function filterByRating(
   items: { title: string; rating: number }[]
@@ -28,18 +23,13 @@ const books = [
   //   { title: "Book s", rating: 6 },
 ];
 
-console.log(filterByRating(books));
-// Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
+
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   const result = arrays.reduce((pre, curr) => [...pre, ...curr], []);
   return result;
 }
 
-console.log(concatenateArrays(["a", "b"], ["c"]));
-// Output: ["a", "b", "c"]
-console.log(concatenateArrays([1, 2], [3, 4], [5]));
-// Output: [1, 2, 3, 4, 5]
 
 class Vehicle {
   private Make: string;
@@ -66,9 +56,7 @@ class Car extends Vehicle {
 }
 
 const myCar = new Car("Toyota", 2020, "Corolla");
-//   const myCar = new Car("Bugatti", 2024, "Chiron");
-console.log(myCar.getInfo()); // Output: "Make: Toyota, Year: 2020"
-console.log(myCar.getModel()); // Output: "Model: Corolla"
+
 
 function processValue(value: string | number): number {
   if (typeof value === "number") {
@@ -78,10 +66,7 @@ function processValue(value: string | number): number {
   }
 }
 
-console.log(processValue("hello")); // Output: 5
-// console.log(processValue("hello world"));
-console.log(processValue(10)); // Output: 20
-// Output: 20
+
 
 interface Product {
   name: string;
@@ -106,8 +91,7 @@ const products = [
   //   { name: "ph", price: 540 },
 ];
 
-console.log(getMostExpensiveProduct(products));
-// Output: { name: "Bag", price: 50 }
+
 
 enum Day {
   Monday,
@@ -127,9 +111,7 @@ function getDayType(day: Day): string {
   }
 }
 
-console.log(getDayType(Day.Monday)); // Output: "Weekday"
-// console.log(getDayType(Day.Friday));   // Output: "Weekday"
-console.log(getDayType(Day.Sunday)); // Output: "Weekday" // Output: "Weekend"
+
 
 async function squareAsync(n: number): Promise<number> {
   if (n < 0) {
@@ -141,6 +123,4 @@ async function squareAsync(n: number): Promise<number> {
   }
 }
 
-squareAsync(4).then(console.log); // Output after 1s: 16
-// squareAsync(5).then(console.log); 
-squareAsync(-3).catch(console.error); // Output: Error: Negative number not allowed
+
