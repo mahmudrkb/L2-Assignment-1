@@ -103,43 +103,44 @@ const products = [
   { name: "Pen", price: 10 },
   { name: "Notebook", price: 25 },
   { name: "Bag", price: 50 },
-//   { name: "ph", price: 540 },
+  //   { name: "ph", price: 540 },
 ];
 
 console.log(getMostExpensiveProduct(products));
 // Output: { name: "Bag", price: 50 }
 
-
-
-
-
-
-
-
-
-
-
 enum Day {
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday,
+}
+
+function getDayType(day: Day): string {
+  if (day === Day.Sunday || day === Day.Saturday) {
+    return "Weekend";
+  } else {
+    return "weekday";
   }
-  
-  function getDayType(day: Day): string  {
-    if(day===Day.Sunday ){
-        return "Weekend"
+}
 
-    }else{
-        return "weekday"
-    }
-  }
-
-
-console.log(getDayType(Day.Monday));   // Output: "Weekday"
+console.log(getDayType(Day.Monday)); // Output: "Weekday"
 // console.log(getDayType(Day.Friday));   // Output: "Weekday"
-console.log(getDayType(Day.Sunday));  // Output: "Weekday"
-;   // Output: "Weekend"
+console.log(getDayType(Day.Sunday)); // Output: "Weekday" // Output: "Weekend"
+
+async function squareAsync(n: number): Promise<number> {
+  if (n < 0) {
+    const output = Promise.reject("Negative number not allowed");
+    return output;
+  } else {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    return n * n;
+  }
+}
+
+squareAsync(4).then(console.log); // Output after 1s: 16
+// squareAsync(5).then(console.log); 
+squareAsync(-3).catch(console.error); // Output: Error: Negative number not allowed
