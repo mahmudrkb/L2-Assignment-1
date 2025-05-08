@@ -40,3 +40,36 @@ console.log(concatenateArrays(["a", "b"], ["c"]));
 // Output: ["a", "b", "c"]
 console.log(concatenateArrays([1, 2], [3, 4], [5])); 
 // Output: [1, 2, 3, 4, 5]
+
+
+
+class Vehicle {
+    private Make: string;
+    private Year: number;
+  
+    constructor(Make: string, Year: number) 
+    {
+      this.Make = Make;
+      this.Year = Year;
+    }
+    getInfo(): string {
+      return `Make: ${this.Make}, Year: ${this.Year}`;
+    }
+  }
+  
+  class Car extends Vehicle {
+    private Model: string;
+    constructor(Make: string, Year: number, Model: string) {
+      super(Make, Year);
+      this.Model = Model;
+    }
+    getModel(): string {
+      return `Model: ${this.Model}`;
+    }
+  }
+  
+  const myCar = new Car("Toyota", 2020, "Corolla");
+//   const myCar = new Car("Bugatti", 2024, "Chiron");
+  console.log(myCar.getInfo())   // Output: "Make: Toyota, Year: 2020"
+  console.log(myCar.getModel())  // Output: "Model: Corolla"
+  
