@@ -1,4 +1,4 @@
-## 1 What is Type Inference in TypeScript?
+## 1. What is Type Inference in TypeScript?
 
 Type inference is a feature in TypeScript where the compiler automatically detects and assigns types to variables, function return values, or parameters without explicitly stating them.
 
@@ -43,7 +43,7 @@ message = 42; //  Error: Type 'number' is not assignable to type 'string'.
 
 
 
-## What is the use of enums in TypeScript ? Provide an example of a numeric and string enum
+## 2. What is the use of enums in TypeScript ? Provide an example of a numeric and string enum
 
 ##  TypeScript Enums: Making Code Clearer
 
